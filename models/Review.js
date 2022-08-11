@@ -35,8 +35,19 @@ Review.init({
     blog: {
         type: DataTypes.STRING,
         allowNull: false
+    }},
+    {
+        // pass in imported sequelize connection
+        sequelize,
+        // don't automatically create createdAt updatedAt fields
+        timestamps: false,
+        // dont plurize name of tables
+        freezeTableName: true,
+        // use undersscore instead of camelCase
+        underscored: true,
+        // make it so our model name stays lowercase in the database
+        modelName: 'user'
     }
-
-})
+);
 
 module.exports = Review;
