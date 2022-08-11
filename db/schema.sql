@@ -5,5 +5,6 @@ CREATE TABLE review (
     country VARCHAR(25) NOT NULL,
     travel_date VARCHAR(25) NOT NULL,
     rating INTEGER NOT NULL,
-    blog VARCHAR(300)
+    blog VARCHAR(300) NOT NULL,
+    id INTEGER AUTO_INCREMENT PRIMARY KEY
 );
