@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js",
     "seed": "node seeds/index.js"
   },
@@ -18,15 +18,7 @@
     "express-handlebars": "^5.3.5",
     "express-session": "^1.17.3",
     "handlebars": "^4.7.6",
-    "mysql2": "^2.3.3",
-    "sequelize": "^6.21.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ksknight81/travel-blog.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ksknight81/travel-blog/issues"
-  },
-  "homepage": "https://github.com/ksknight81/travel-blog#readme"
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
 }
