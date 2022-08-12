@@ -1,7 +1,4 @@
-
-const Review = require('./Review');
 const User = require('./User');
+const Post = require('./Post');
 
-
-
-module.exports = { User, Review };
+module.exports = { User, Post };

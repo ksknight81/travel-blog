@@ -1,8 +1,8 @@
 const {Model, DataTypes} = require('sequelize');
 
-class Review extends Model {}
+class Post extends Model {}
 
-Review.init({
+Post.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -46,8 +46,8 @@ Review.init({
         // use undersscore instead of camelCase
         underscored: true,
         // make it so our model name stays lowercase in the database
-        modelName: 'user'
+        modelName: 'post'
     }
 );
 
-module.exports = Review;
+module.exports = Post;
