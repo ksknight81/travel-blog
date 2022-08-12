@@ -50,4 +50,16 @@ Post.init({
     }
 );
 
+<<<<<<< HEAD:models/Post.js
 module.exports = Post;
+=======
+}, {
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'review'
+})
+
+module.exports = Review;
+>>>>>>> feature/comments:models/Review.js
