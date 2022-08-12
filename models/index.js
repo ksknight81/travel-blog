@@ -1,5 +1,7 @@
+
 const Review = require('./Review');
+const User = require('./User');
 
 
 
-module.exports = {Review};
+module.exports = { User, Review };
