@@ -1,5 +1,6 @@
 const Review = require('./Review');
+const Comment = require('./Comment');
 
 
 
-module.exports = {Review};
+module.exports = {Review, Comment};
