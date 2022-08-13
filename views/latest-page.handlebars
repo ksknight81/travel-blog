@@ -1,0 +1,11 @@
+<div class="col-12 p-0 d-flex justify-content-between">
+    <h1>Latest</h1>
+
+    <div class="d-flex align-items-center">
+        <span class="badge rounded-pill bg-primary">Login/ Sign up</span>
+    </div>
+    
+    {{#each posts as |post|}}
+        {{> single-post post}}
+    {{#/each}}
+</div>
