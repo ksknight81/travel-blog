@@ -11,6 +11,45 @@
 </head>
 <body>
 
+    {{#if !loggedIn}}
+
+    <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="sign-in-modal-label">Sign in</h1>
+
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex justify-content-between">
+                    <a href="">
+                        <p>Register here</p>
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{/if}}
+
     <nav class="navbar sticky-top navbar-expand-lg bg-light px-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Travel Blog</a>
@@ -25,15 +64,23 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Latest</a>
                     </li>
+
+                    {{#if loggedIn}}
+                    <li class="nav-item">
+                        <a class="nav-link active"aria-current="page" href="#">New Post</a>
+                    </li>
+
+
                     <li class="nav-item dropdown">
                         <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Account
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Login</a></li>
-                            <li><a class="dropdown-item" href="#">Sign Up</a></li>
+                            <li><a class="dropdown-item" href="#">Delete Account</a></li>
                         </ul>
                     </li>
+                    {{/if}}
+
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search a city" aria-label="Search">
@@ -43,7 +90,7 @@
         </div>
     </nav>
 
-    <main class="container-fluid">
+    <main class="container-fluid my-auto">
         <div class="row no-gutters d-flex my-4 mx-2">
             {{ body }}
         </div>
