@@ -11,6 +11,10 @@ Post.init({
         primaryKey: true,
         autoIncrement: true
     }, 
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     travel_date: {
         type: DataTypes.DATE,
         allowNull: false,
@@ -32,6 +36,13 @@ Post.init({
         validate: {
             max: 5,
             min: 0
+        }
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: "user",
+            key: "id"
         }
     },
     blog: {

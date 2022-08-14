@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS travel_blog;
-CREATE DATABASE travel_blog;
-USE travel_blog;
+DROP DATABASE IF EXISTS travel_db;
+CREATE DATABASE travel_db;
+USE travel_db;
