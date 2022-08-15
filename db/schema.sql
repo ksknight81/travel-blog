@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS review;
+CREATE TABLE review;
+USE review;
