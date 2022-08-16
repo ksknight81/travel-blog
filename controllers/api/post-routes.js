@@ -1,5 +1,9 @@
 const router = require('express').Router();
 const { User, Post } = require('../../models');
+
+const multer = require('multer');
+const upload = multer({dest: 'uploads/'})
+const { uploadImage } = require('../../s3')
 // const Post = require('../../models/Post');
 
 // get all comments
@@ -60,7 +64,9 @@ router.get('/:id', (req, res) => {
 });
 
 
-router.post('/', (req, res) => {
+router.post('/', upload.single('image'), (req, res) => {
+
+    // const image_path = req.file.path;
     Post.create({
         id: req.body.id,
         title: req.body.title,
@@ -69,11 +75,18 @@ router.post('/', (req, res) => {
         country: req.body.country,
         rating: req.body.rating,
         blog: req.body.blog,
-        username: req.body.username
+        username: req.body.username,
+        // image: image_path
+        image: req.file.filename
     })
     .then((dbPostData) => {
-        res.json(dbPostData);
+        console.log(req.file)
+        uploadImage(req.file);
+        // res.json(dbPostData);
     })
+    .then(
+        res.send('success')
+    )
 });
 
 router.put('/:id', (req, res) => {
