@@ -6,18 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+    <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Travel Blog</title>
 </head>
-<body>
-
-    {{#if loggedIn}}
-
-    {{else}}
+<body class="d-flex flex-column min-vh-100">
 
     <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal-label" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -54,8 +50,6 @@
         </div>
     </div>
 
-    {{/if}}
-
     <nav class="navbar sticky-top navbar-expand-lg bg-light px-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Travel Blog</a>
@@ -71,22 +65,19 @@
                         <a class="nav-link active" href="#">Latest</a>
                     </li>
 
-                    {{#if loggedIn}}
                     <li class="nav-item">
-                        <a class="nav-link active"aria-current="page" href="#">New Post</a>
+                        <a class="nav-link active" href="#">New Post</a>
                     </li>
-
-
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Account
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Delete Account</a></li>
+                            <li><a class="dropdown-item" href="#">Login</a></li>
+                            <li><a class="dropdown-item" href="#">Sign Up</a></li>
                         </ul>
                     </li>
-                    {{/if}}
-
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search a city" aria-label="Search">
@@ -96,14 +87,68 @@
         </div>
     </nav>
 
-    <main class="container-fluid my-auto">
+    <main class="container-fluid">
         <div class="row no-gutters d-flex my-4 mx-2">
-            {{ body }}
+            <div class="col-12">
+                <h1 class="border-bottom border-dark mt-4">Welcome to Jamrock</h1>
+            </div>
+
+            <div class="col-12">
+                <p class="text-muted">Montego Bay, Jamaica - August 14, 2022 - By. Jknight</p>
+                <p class="text-muted">Rating: 5 <span><i class="fa-solid fa-star"></i></span></p>
+            </div>
+
+            <div class="col-12 text-center">
+                <img src="./images/montego_bay.jpeg" class="rounded w-50 h-auto my-4" >
+            </div>
+            
+            <div class="col-12">
+                <p>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </p>
+            </div>
+
+            <div class="col-12 mb-3">
+                <h2 class="border-bottom border-secondary text-muted">Comments</h2>
+            </div>
+
+            <form class="mb-3">
+                
+                    
+                <label for="comment" class="form-label">Add Comment</label>
+
+                <textarea name="comment" class="form-control mb-2" rows="2"></textarea>      
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+                
+            </form>
+            
+            <article class="col-12 border-start border-primary">
+                <div class="col-12">
+                    <h5>Random User</h5>
+                </div>
+                <div class="col-12">
+                    <p>
+                        Thank you for telling us about your wonderful experience!
+                    </p>
+                </div>
+            </article>
+
+            <article class="col-12 border-start border-primary my-3">
+                <div class="col-12">
+                    <h5>Random User 2</h5>
+                </div>
+                <div class="col-12">
+                    <p>
+                        Wow i'm definitely going to check out Montego Bay after reading your post
+                    </p>
+                </div>
+            </article>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-white text-muted">
+    <footer class="text-center text-lg-start bg-white text-muted mt-auto">
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
             © 2022 Copyright
