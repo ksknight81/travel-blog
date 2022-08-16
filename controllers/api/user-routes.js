@@ -71,6 +71,10 @@ router.post("/", (req, res) => {
 
       res.json(dbUserData);
     });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
 });
 
@@ -101,6 +105,10 @@ router.post("/login", (req, res) => {
 
       res.json({ user: dbUserData, message: "You are now logged in!" });
     });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
 });
 

@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// 
+// get one comment
 router.get('/:id', (req, res) => {
     Comment.findOne({
         where: {
@@ -48,7 +48,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// create new post
+// create new comment
 router.post('/', (req, res) => {
     Comment.create({
         comment_text: req.body.comment_text,
