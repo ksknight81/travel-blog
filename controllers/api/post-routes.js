@@ -5,6 +5,9 @@ const multer = require('multer');
 const upload = multer({dest: 'uploads/'})
 const { uploadImage } = require('../../s3')
 // const Post = require('../../models/Post');
+// const {unlinkFile} = require('../../unlink-file');
+const fs = require('fs');
+const util = require('util');
 
 // get all comments
 router.get('/', (req, res) => {
@@ -82,10 +85,19 @@ router.post('/', upload.single('image'), (req, res) => {
     .then((dbPostData) => {
         console.log(req.file)
         uploadImage(req.file);
-        // res.json(dbPostData);
+        // res.json(dbPostData)
     })
     .then(
-        res.send('success')
+        // unlinkFile(`../../${req.file.path}`)
+
+        fs.unlink(`uploads/${req.file.filename}`, err => {
+            if (err) {
+                console.log(err)
+            }
+            else {
+                console.log('file deleted')
+            }
+        })
     )
 });
 
