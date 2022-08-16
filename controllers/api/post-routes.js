@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
         'travel_date',
         'city', 
         'country', 
-        'image',
         'rating',
         'blog'],
      include: {
@@ -36,8 +35,7 @@ router.get('/:id', (req, res) => {
         'title',
         'travel_date',
         'city', 
-        'country',
-        'image', 
+        'country', 
         'rating',
         'blog'],
      include: {
@@ -70,7 +68,6 @@ router.post('/', (req, res) => {
         city: req.body.city,
         country: req.body.country,
         rating: req.body.rating,
-        image: req.body.image,
         blog: req.body.blog,
         username: req.body.username
     })
@@ -87,7 +84,6 @@ router.put('/:id', (req, res) => {
         city: req.body.city,
         country: req.body.country,
         rating: req.body.rating,
-        image: req.body.image,
         blog: req.body.blog,
         username: req.body.username
      }, {
