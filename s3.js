@@ -31,6 +31,20 @@ const uploadImage = (img) => {
 
 // download file from bucket
 
+const getImage = (fileKey) => {
+    try {
+        const downloadParams = {
+            Bucket: bucketName,
+            Key: fileKey
+        };
+
+        return s3.getObject(downloadParams).createReadStream();
+    }
+    catch {
+        console.log("image not found")
+    }
+}
 
 
-module.exports = { uploadImage }
+
+module.exports = { uploadImage, getImage }
