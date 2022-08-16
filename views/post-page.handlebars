@@ -32,3 +32,9 @@
     <button type="submit" class="btn btn-primary">Submit</button>
     
 </form>
+
+{{#each post.comments as |comment|}}
+
+{{> comment comment}}
+
+{{/each}}
