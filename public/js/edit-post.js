@@ -1,6 +1,6 @@
 const editPostButtonEl = $('#edit-post');
 const deletePostButtonEl = $('#delete-post');
-const submitEditButton = $('#submit-edit');
+const submitEditButtonEl = $('#submit-edit');
 // const userId = $('div').attr('data-user-id');
 
 editPostButtonEl.on('click', function(event) {
@@ -9,10 +9,12 @@ editPostButtonEl.on('click', function(event) {
     console.log(userId)
 
     fetch(`/api/posts/${userId.userId}?id=${userId.userId}`);
-    document.location.replace(`/api/posts/${userId.userId}?id=${userId.userId}`)
+    document.location.replace(`/api/posts/${userId.userId}?`)
+
+    // document.location.replace(`/api/posts/${userId.userId}?id=${userId.userId}`)
 })
 
-submitEditButton.on('click', function(event) {
+submitEditButtonEl.on('click', function(event) {
     event.preventDefault();
     const userId = submitEditButtonEl.data();
     console.log(userId)
@@ -22,10 +24,23 @@ submitEditButton.on('click', function(event) {
     // const image = $('#image')[0].files;
 
     fetch(`/api/posts/${userId.userId}?id=${userId.userId}`, 
+    
     {
-        method: "PUT"
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+        title: `${$("#title").val()}`,
+        city: `${$("#city").val()}`,
+        country: `${$("country").val()}`,
+        rating: `${$("rating").val()}`,
+        blog: `${$("blog").val()}`,
+        image: `${image}`
+        })
     });
     document.location.replace(`/home`);
+
 
     // {
     //     method: 'PUT',

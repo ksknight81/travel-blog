@@ -1,10 +1,10 @@
-const formEl = $("form");
+const newPostFormEl = $("form");
 const newPostButtonEl = $('#create-new-post');
 
-formEl.on('click', '#submit', function(event) {
+newPostFormEl.on('click', '#submit', function(event) {
     event.preventDefault();
     let data = new FormData();
-    const formData = formEl.serializeArray();
+    const formData = newPostFormEl.serializeArray();
     const image = $('#image')[0].files;
 
     data.append('title', formData[0].value)
