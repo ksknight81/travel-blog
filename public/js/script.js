@@ -5,10 +5,10 @@ async function openPost (event) {
     console.log(post_id);
     // fetch(`http://localhost:3001/post/${post_id}`);
     // document.location.replace(`/post/${post_id}`);
-    const response = await fetch(`http://localhost:3001/api/posts/${post_id}`);
+    const response = await fetch(`/api/posts/${post_id}`);
 
     if (response.ok) {
-        fetch(`http://localhost:3001/home/post/${post_id}`);
+        fetch(`/home/post/${post_id}`);
         document.location.replace(`/home/post/${post_id}`);
         
     } else {

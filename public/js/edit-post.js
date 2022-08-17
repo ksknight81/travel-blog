@@ -6,6 +6,6 @@ editPostButtonEl.on('click', function(event) {
     const userId = editPostButtonEl.data();
     console.log(userId)
 
-    fetch(`http://localhost:3001/api/posts/${userId.userId}`);
+    fetch(`/api/posts/${userId.userId}`);
     document.location.replace(`/api/posts/${userId.userId}`)
 })
