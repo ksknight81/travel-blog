@@ -18,7 +18,8 @@
 <body class="d-flex flex-column min-vh-100">
 
     {{#if loggedIn}}
-
+    <div></div>
+    {{else}}
     <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal-label" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -29,8 +30,8 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                 </div>
-                <div class="modal-body" id="login-form">
-                    <form>
+                <div class="modal-body">
+                    <form id="login-form">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email">
@@ -38,7 +39,7 @@
 
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control">
+                            <input type="password" class="form-control" id="password">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Login</button>
@@ -53,6 +54,7 @@
             </div>
         </div>
     </div>
+    <script src="/js/login.js"></script>
 
     {{/if}}
 
