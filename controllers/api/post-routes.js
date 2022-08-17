@@ -2,8 +2,9 @@ const router = require('express').Router();
 const { User, Post, Vote, Comment } = require('../../models');
 const sequelize = require('sequelize');
 const multer = require('multer');
-const upload = multer({dest: 'uploads/'})
-const { uploadImage } = require('../../s3')
+const upload = multer({dest: 'uploads/'});
+const { uploadImage } = require('../../s3');
+const withAuth = require('../../utils/auth');
 
 const fs = require('fs');
 const util = require('util');
@@ -124,7 +125,7 @@ router.put('/upvote', (req, res) => {
     )
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Post.update({ 
         id: req.body.id,
         title: req.body.title,
