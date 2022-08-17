@@ -1,11 +1,11 @@
 <div class="col-12">
-    <h1 class="border-bottom border-dark mt-4">Welcome to Jamrock</h1>
+    <h1 class="border-bottom border-dark mt-4">{{post.title}}</h1>
 </div>
 
 <div class="col-12">
-    <p class="text-muted">Montego Bay, Jamaica - August 14, 2022 - By. Jknight</p>
+    <p class="text-muted">{{post.city}}, {{post.country}} - {{post.travel_date}} - {{post.user}} </p>
 
-    <p class="text-muted">Rating: 5 <span><i class="fa-solid fa-star"></i></span></p>
+    <p class="text-muted">Rating: {{post.rating}} <span><i class="fa-solid fa-star"></i></span></p>
 </div>
 
 <div class="col-12 text-center">
@@ -14,7 +14,7 @@
 
 <div class="col-12">
     <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        {{post.blog}}
     </p>
 </div>
 
@@ -22,7 +22,7 @@
     <h2 class="border-bottom border-secondary text-muted">Comments</h2>
 </div>
 
-<form class="mb-3">
+<form class="mb-3" id="comment-form">
     
         
     <label for="comment" class="form-label">Add Comment</label>
@@ -32,3 +32,9 @@
     <button type="submit" class="btn btn-primary">Submit</button>
     
 </form>
+
+{{#each post.comments as |comment|}}
+
+{{> comment comment}}
+
+{{/each}}

@@ -1,50 +1,52 @@
-<div class="card col-12 col-md-8 bg-my-5">
-                <div class="card-body bg-light">
-                    <h1 class="card-title text-center">Create New Post</h1>
+<div class="card col-12 col-md-8 bg-light my-5">
+    <div class="card-body">
+        <h1 class="card-title text-center">Create New Post</h1>
 
-                    <form>
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="title">
-                        </div>
-
-                        <div class="mb-3">
-
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="city" class="form-label">City</label>
-                            <input type="text" class="form-control" id="city">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="country" class="form-label">Country</label>
-                            <input type="text" class="form-control" id="country">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="rating" class="form-label">Select Rating</label>
-                            <select class="form-select" id="rating">
-                                <option selected value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                </select>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="photo" class="form-label">Add Photo</label>
-                            <input type="file" class="form-control form-control-sm" id="photo">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="country" class="form-label">Blog Entry</label>
-                            <textarea class="form-control" id="blog-entry" rows="5"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Post</button>
-                        
-                    </form>
-                </div>
+        <form enctype="multipart/form-data" action="upload/post">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name='title' class="form-control" id="title">
             </div>
+
+            <div class="mb-3">
+
+            </div>
+
+            <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <input type="text" name='city' class="form-control" id="city">
+            </div>
+            
+            <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" name='country' class="form-control" id="country">
+            </div>
+
+            <div class="mb-3">
+                <label for="rating" class="form-label">Select Rating</label>
+                <select class="form-select" name="rating" id="rating">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Add Photo</label>
+                <input type="file" name="image" class="form-control form-control-sm" id="image">
+            </div>
+
+            <div class="mb-3">
+                <label for="blog-entry" class="form-label">Blog Entry</label>
+                <textarea class="form-control" name='blog-entry' id="blog-entry" rows="5"></textarea>
+            </div>
+
+            <button type="submit" id="submit" class="btn btn-primary">Post</button>
+            
+        </form>
+    </div>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/js/new-post.js"></script>
