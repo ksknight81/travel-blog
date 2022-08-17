@@ -8,8 +8,8 @@ editPostButtonEl.on('click', function(event) {
     const userId = editPostButtonEl.data();
     console.log(userId)
 
-    fetch(`/api/posts/${userId.userId}`);
-    document.location.replace(`/api/posts/${userId.userId}`)
+    fetch(`/api/posts/${userId.userId}?id=${userId.userId}`);
+    document.location.replace(`/api/posts/${userId.userId}?id=${userId.userId}`)
 })
 
 submitEditButton.on('click', function(event) {
@@ -17,7 +17,7 @@ submitEditButton.on('click', function(event) {
     const userId = submitEditButtonEl.data();
     console.log(userId)
 
-    fetch(`http://localhost:3001/api/posts/${userId.userId}`,
+    fetch(`/api/posts/${userId.userId}`,
     {
         method: 'PUT'
     });
@@ -27,8 +27,9 @@ submitEditButton.on('click', function(event) {
 deletePostButtonEl.on('click', function(event) {
     event.preventDefault();
     const userId = deletePostButtonEl.data();
+    console.log(userId.userId)
 
-    fetch(`http://localhost:3001/api/posts/${userId.userId}?id=${userId.userId}`, {
+    fetch(`/api/posts/${userId.userId}?id=${userId.userId}`, {
         method: 'DELETE',
     })
 
