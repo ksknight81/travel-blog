@@ -4,7 +4,7 @@ async function loginHandler (event) {
     const password = document.querySelector("input[id='password'").value.trim();
 
     if (email && password) {
-        const response = await fetch('http://localhost:3001/api/users/login', {
+        const response = await fetch('/api/users/login', {
             method: 'post',
             // mode: 'no-cors',
             body: JSON.stringify({
@@ -16,7 +16,7 @@ async function loginHandler (event) {
         });
 
         if (response.ok) {
-            fetch('http://localhost:3001/home');
+            fetch('/home');
             document.location.replace('/home');
             // response.redirected('back');
             // .then(response.render('homepage'));
