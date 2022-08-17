@@ -139,7 +139,8 @@ router.put('/:id', withAuth, (req, res) => {
         country: req.body.country,
         rating: req.body.rating,
         blog: req.body.blog,
-        username: req.body.username
+        username: req.body.username,
+        image: req.body.image
      }, {
         where: {
             id: req.params.id
