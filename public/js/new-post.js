@@ -16,7 +16,7 @@ newPostFormEl.on('click', '#submit', function(event) {
     data.append('username', 'jknight')
     data.append('image', image[0])
 
-    axios.post('http://localhost:3001/api/posts', data)
+    axios.post('/api/posts', data)
 })
 
 newPostButtonEl.on("click", function(event) {
