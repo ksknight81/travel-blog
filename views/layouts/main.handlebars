@@ -15,10 +15,11 @@
 
     <title>Travel Blog</title>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
     {{#if loggedIn}}
-
+    <div></div>
+    {{else}}
     <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal-label" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -29,8 +30,8 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                 </div>
-                <div class="modal-body" id="login-form">
-                    <form>
+                <div class="modal-body">
+                    <form id="login-form">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email">
@@ -38,14 +39,14 @@
 
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control">
+                            <input type="password" class="form-control" id="password">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Login</button>
                     </form>
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
-                    <a href="">
+                    <a href="/signup">
                         <p>Register here</p>
                     </a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -53,12 +54,13 @@
             </div>
         </div>
     </div>
+    <script src="/js/login.js"></script>
 
     {{/if}}
 
     <nav class="navbar sticky-top navbar-expand-lg bg-light px-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Travel Blog</a>
+            <a class="navbar-brand" href="/home">Travel Blog</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -72,7 +74,7 @@
                     </li>
 
                     {{#if loggedIn}}
-                    <li class="nav-item">
+                    <li class="nav-item" id="create-new-post">
                         <a class="nav-link active"aria-current="page" href="#">New Post</a>
                     </li>
 
@@ -96,8 +98,8 @@
         </div>
     </nav>
 
-    <main class="container-fluid my-auto">
-        <div class="row no-gutters d-flex my-4 mx-2 justify-content-center">
+    <main class="container-fluid mt-0 mb-auto">
+        <div class="row no-gutters d-flex my-4 mx-2 justify-content-center" id="posts-body">
             {{{ body }}}
         </div>
     </main>
@@ -112,4 +114,9 @@
     </footer>
     <!-- Footer -->
 </body>
+<script src="/js/script.js"></script>
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
+<script src="/js/new-post.js"></script>
 </html>

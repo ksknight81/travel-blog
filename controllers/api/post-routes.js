@@ -4,6 +4,7 @@ const sequelize = require('sequelize');
 const multer = require('multer');
 const upload = multer({dest: 'uploads/'})
 const { uploadImage } = require('../../s3')
+const withAuth = require('../../utils/auth');
 
 const fs = require('fs');
 const util = require('util');
@@ -66,7 +67,12 @@ router.get('/:id', (req, res) => {
             res.status(404).json({ message: 'No post found with this id'});
             return;
         }
-        res.json(dbPostData);
+        const post = dbPostData.get({ plain: true }); 
+        // res.json(dbPostData);
+        res.render('edit-post', {
+            post,
+            loggedIn: req.session.loggedIn
+        })
     })
     .catch((err) => {
       console.log(err);
@@ -124,7 +130,7 @@ router.put('/upvote', (req, res) => {
     )
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Post.update({ 
         id: req.body.id,
         title: req.body.title,
@@ -133,7 +139,8 @@ router.put('/:id', (req, res) => {
         country: req.body.country,
         rating: req.body.rating,
         blog: req.body.blog,
-        username: req.body.username
+        username: req.body.username,
+        image: req.body.image
      }, {
         where: {
             id: req.params.id
@@ -143,8 +150,12 @@ router.put('/:id', (req, res) => {
         if(!dbPostData[0]) {
             res.status(400).json({ message: 'No post found with this id' });
             return;
-        }        
-        res.json(dbPostData);
+        }
+        const post = dbPostData.get({ plain: true });        
+        res.render('post-page', {
+            post,
+            loggedIn: req.session.loggedIn
+        })
     })
     .catch(err => {
         console.log(err);
@@ -152,7 +163,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id

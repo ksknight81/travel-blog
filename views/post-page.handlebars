@@ -1,3 +1,18 @@
+<div class="col-12 p-0 d-flex justify-content-end">
+    {{#if loggedIn}}
+    <div class="d-flex align-items-end">
+        {{!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sign-in-modal" id="logout">Log out</button> --}}
+        <button type="button" class="btn btn-primary" id="logout">Log out</button>
+    </div>
+
+    {{else}}
+    <div class="d-flex align-items-end">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sign-in-modal">Login/signup</button>
+    </div>
+
+    {{/if}}
+</div>
+
 <div class="col-12">
     <h1 class="border-bottom border-dark mt-4">{{post.title}}</h1>
 </div>
@@ -9,13 +24,17 @@
 </div>
 
 <div class="col-12 text-center">
-    <img src="./images/montego_bay.jpeg" class="rounded w-50 h-auto my-4" >
+    <img src="/images/{{post.image}}" class="rounded w-50 h-auto my-4" >
 </div>
 
 <div class="col-12">
     <p>
         {{post.blog}}
     </p>
+</div>
+
+<div class="col-12">
+    <button class="btn btn-danger" id="edit-post" data-user-id="{{post.id}}">Edit Post</button>
 </div>
 
 <div class="col-12 mb-3">
@@ -38,3 +57,5 @@
 {{> comment comment}}
 
 {{/each}}
+<script src="/js/comment.js"></script>
+<script src="/js/edit-post.js"></script>

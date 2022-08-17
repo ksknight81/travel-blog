@@ -1,11 +1,11 @@
 <div class="card col-12 col-md-6 bg-light my-5">
     <div class="card-body">
         <h1 class="card-title text-center">Sign up!</h1>
-        <div class="card-body" id="signup-form">
+        <form class="card-body" id="signup-form">
 
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username">
+                <input type="text" class="form-control" id="signup-username">
             </div>
 
             <div class="mb-3">
@@ -14,16 +14,17 @@
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control" id="signup-email">
             </div>
             
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password">
+                <input type="password" class="form-control" id="signup-password">
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
             
-        </div>
+        </form>
     </div>
 </div>
+<script src="/js/signup.js"></script>

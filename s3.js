@@ -37,7 +37,6 @@ const getImage = (fileKey) => {
             Bucket: bucketName,
             Key: fileKey
         };
-
         return s3.getObject(downloadParams).createReadStream();
     }
     catch {

@@ -1,4 +1,5 @@
 const formEl = $("form");
+const newPostButtonEl = $('#create-new-post');
 
 formEl.on('click', '#submit', function(event) {
     event.preventDefault();
@@ -15,14 +16,10 @@ formEl.on('click', '#submit', function(event) {
     data.append('username', 'jknight')
     data.append('image', image[0])
 
-    // fetch('http://localhost:3001/api/posts', {
-    //     method: 'POST',
-    //     body: data,
-    //     headers: {
-            
-    //     }
-    // })
+    axios.post('http://localhost:3001/api/posts', data)
+})
 
-
-axios.post('http://localhost:3001/api/posts', data)
+newPostButtonEl.on("click", function(event) {
+    fetch("/new-post");
+    document.location.replace('/new-post');
 })
