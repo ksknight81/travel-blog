@@ -25,4 +25,5 @@ formEl.on('click', '#submit', function(event) {
 
 
 axios.post('http://localhost:3001/api/posts', data)
+
 })
