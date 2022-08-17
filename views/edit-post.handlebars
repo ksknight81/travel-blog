@@ -42,11 +42,15 @@
                 <label for="blog-entry" class="form-label">Blog Entry</label>
                 <textarea class="form-control" name='blog-entry' id="blog-entry" rows="5">{{post.blog}}</textarea>
             </div>
+            <div>
+                <button type="submit" id="submit-edit" class="btn btn-primary" data-user-id="{{post.user_id}}">Post</button>
 
-            <button type="submit" id="submit" class="btn btn-primary" data-user-id="{{post.user_id}}">Post</button>
+                <button type="button" id="delete-post" class="btn btn-danger" data-user-id="{{post.user_id}}">Delete Post</button>
+            </div>
             
         </form>
     </div>
 </div>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/js/new-post.js"></script>
+<script src="/js/edit-post.js"></script>
