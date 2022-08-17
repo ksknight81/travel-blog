@@ -1,3 +1,18 @@
+<div class="col-12 p-0 d-flex justify-content-end">
+    {{#if loggedIn}}
+    <div class="d-flex align-items-end">
+        {{!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sign-in-modal" id="logout">Log out</button> --}}
+        <button type="button" class="btn btn-primary" id="logout">Log out</button>
+    </div>
+
+    {{else}}
+    <div class="d-flex align-items-end">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sign-in-modal">Login/signup</button>
+    </div>
+
+    {{/if}}
+</div>
+
 <div class="card col-12 col-md-8 bg-light my-5">
     <div class="card-body">
         <h1 class="card-title text-center">Edit Post</h1>
