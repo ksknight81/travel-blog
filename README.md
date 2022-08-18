@@ -1,13 +1,17 @@
 # Travel Blog
 
+![Badge](https://img.shields.io/badge/license-MIT-green)
+
 ## Description
-A website where users can post about and rate cities they've traveled to.
+We are a travel blog company that was created with the avid traveler in mind.  We built this site as a way to allow for the greater community to come together and provide quality feedback on locations around the world.  This is a site that is created for travelers with reviews by travelers.
 
 ## Table of Contents
 [Installation Instructions](#installation-instructions)   
 [Built With](#built-with)  
 [Deployed Application](#deployed-application)  
-[Contribution](#contribution)  
+[Testing](#testing)  
+[License](#license)  
+[Contributors](#contribution)    
 
 ## Installation Instructions
 npm, Node.js, Express.js, MySQL, MySQL2, Sequelize, dotenv, bcrypt, Handlebars and sessions must be installed to use this application.
@@ -30,8 +34,31 @@ Once the above steps have been followed, follow the steps below to run the appli
 ## Built With
 * Node.js
 * JavaScript
+* Handlebars
+* Node.js
+* Express.js
+* MySql
+* Sequelize ORM
+* Amazon S3 for images
 
-Link to deployed application:  https://obscure-bayou-98078.herokuapp.com/home
+## Deployed Application
+* GitHub repository link: https://github.com/ksknight81/travel-blog
+
+* Deployed Site URL: https://cryptic-fortress-47050.herokuapp.com/home
+
+## Testing
+Testing is currently not set up for this application.
+
+## License
+This project is covered under the MIT license agreement.
 
 Screenshot of application:
 ![alt_tag](https://github.com/ksknight81/travel-blog/blob/main/public/images/travelblogimage.png)
+
+## Contributors
+Made with ❤️ by:
+
+- Dylan Hay
+- Jared Knight
+- Omar Rodriguez
+- Kevin Knight
