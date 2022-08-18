@@ -41,7 +41,7 @@ submitEditButtonEl.on('click', function(event) {
     //     })
     // });
 
-    fetch(`/api/posts/${userId.userId}`, 
+    fetch(`https://cryptic-fortress-47050.herokuapp.com/api/posts/${userId.userId}`, 
     
     {
         method: 'PUT',
@@ -58,7 +58,7 @@ submitEditButtonEl.on('click', function(event) {
         })
     });
 
-    fetch(`http://localhost:3001/home`);
+    fetch(`https://cryptic-fortress-47050.herokuapp.com/home`);
     document.location.replace(`/home`);
 
 

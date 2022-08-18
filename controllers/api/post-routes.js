@@ -155,7 +155,7 @@ router.put('/:id', withAuth, (req, res) => {
         }
         console.log(dbPostData);
         // fetch(`http://localhost:3001/api/posts/${req.params.id}`)
-        fetch(`http://localhost:3001/home/post/${req.params.id}`)
+        fetch(`https://cryptic-fortress-47050.herokuapp.com/home/post/${req.params.id}`)
         .then(response => {
             // response = response.get({plain: true});
             res.render('post-page', {
