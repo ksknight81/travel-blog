@@ -23,7 +23,25 @@ submitEditButtonEl.on('click', function(event) {
     // const formData = formEl.serializeArray();
     // const image = $('#image')[0].files;
 
-    fetch(`/api/posts/${userId.userId}?id=${userId.userId}`, 
+    // console.log(`/api/posts/${userId.userId}`);
+
+    // console.log(    {
+    //     method: 'PUT',
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify({
+    //     title: `${$("#title").val()}`,
+    //     city: `${$("#city").val()}`,
+    //     country: `${$("#country").val()}`,
+    //     rating: `${$("#rating").val()}`,
+    //     blog: `${$("#blog-entry").val()}`,
+    //     // image: `${image}`,
+    //     // image2: image,
+    //     })
+    // });
+
+    fetch(`/api/posts/${userId.userId}`, 
     
     {
         method: 'PUT',
@@ -33,12 +51,14 @@ submitEditButtonEl.on('click', function(event) {
         body: JSON.stringify({
         title: `${$("#title").val()}`,
         city: `${$("#city").val()}`,
-        country: `${$("country").val()}`,
-        rating: `${$("rating").val()}`,
-        blog: `${$("blog").val()}`,
-        image: `${image}`
+        country: `${$("#country").val()}`,
+        rating: `${$("#rating").val()}`,
+        blog: `${$("#blog-entry").val()}`,
+        // image: `${image}`
         })
     });
+
+    fetch(`http://localhost:3001/home`);
     document.location.replace(`/home`);
 
 

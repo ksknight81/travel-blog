@@ -5,6 +5,8 @@ const multer = require('multer');
 const upload = multer({dest: 'uploads/'})
 const { uploadImage } = require('../../s3')
 const withAuth = require('../../utils/auth');
+// import fetch from "node-fetch";
+const fetch = require('node-fetch');
 
 const fs = require('fs');
 const util = require('util');
@@ -132,7 +134,7 @@ router.put('/upvote', (req, res) => {
 
 router.put('/:id', withAuth, (req, res) => {
     Post.update({ 
-        id: req.body.id,
+        // id: req.params.id,
         title: req.body.title,
         travel_date: req.body.travel_date,
         city: req.body.city,
@@ -151,11 +153,25 @@ router.put('/:id', withAuth, (req, res) => {
             res.status(400).json({ message: 'No post found with this id' });
             return;
         }
-        const post = dbPostData.get({ plain: true });        
-        res.render('post-page', {
-            post,
-            loggedIn: req.session.loggedIn
+        console.log(dbPostData);
+        // fetch(`http://localhost:3001/api/posts/${req.params.id}`)
+        fetch(`http://localhost:3001/home/post/${req.params.id}`)
+        .then(response => {
+            // response = response.get({plain: true});
+            res.render('post-page', {
+                response,
+                loggedIn: req.session.loggedIn
+            })
         })
+        .catch(err => {
+            console.log(err);
+            res.json({message: 'some error'});
+        });
+        // const post = dbPostData.get({ plain: true });        
+        // res.render('post-page', {
+        //     post,
+        //     loggedIn: req.session.loggedIn
+        // })
     })
     .catch(err => {
         console.log(err);
