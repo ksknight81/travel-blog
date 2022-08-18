@@ -34,10 +34,11 @@
         {{post.blog}}
     </p>
 </div>
-
+{{#if loggedIn}}
 <div class="col-12">
     <button class="btn btn-danger" id="edit-post" data-user-id="{{post.id}}">Edit Post</button>
 </div>
+{{/if}}
 
 <div class="col-12 mb-3">
     <h2 class="border-bottom border-secondary text-muted">Comments</h2>
