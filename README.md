@@ -58,7 +58,7 @@ Screenshot of application:
 ## Contributors
 Made with ❤️ by:
 
-- Dylan Hay
-- Jared Knight
-- Omar Rodriguez
-- Kevin Knight
+- Dylan Hay (https://github.com/dylanhay)
+- Jared Knight (https://github.com/jarydknight)
+- Omar Rodriguez (https://github.com/nickless192)
+- Kevin Knight (https://github.com/ksknight81)
