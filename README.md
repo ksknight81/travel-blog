@@ -34,4 +34,4 @@ Once the above steps have been followed, follow the steps below to run the appli
 Link to deployed application:  https://obscure-bayou-98078.herokuapp.com/home
 
 Screenshot of application:
-![alt_tag]()
+![alt_tag](https://github.com/ksknight81/travel-blog/blob/main/public/images/travelblogimage.png)
